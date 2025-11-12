@@ -43,7 +43,7 @@ namespace ShuttleCargoElevatorAccess
                 ItemOnFloor itemOnFloor = v._itemsOnFloor.Get(v._creatures.Player.CreatureData.Position);
                 v._lastInteractObstacle = null;
                 ShuttleCargoDepartment department = v._magnumSpaceship.GetDepartment<ShuttleCargoDepartment>();
-                if (department != null)
+                if (department != null && department.IsActiveDepartment())
                 {
                     v._tabsView.AddTab(v._shuttleCargoView, department.ShuttleCargo, TabType.Nymeric);
                     v._shuttleCargoView.AddCaptionByTab(department.ShuttleCargo, Localization.Get("ui.magnum.shuttleCargo"));
